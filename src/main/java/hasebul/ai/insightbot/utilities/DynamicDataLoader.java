@@ -1,4 +1,4 @@
-package hasebul.ai.hitman.rag;
+package hasebul.ai.insightbot.utilities;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.ai.document.Document;

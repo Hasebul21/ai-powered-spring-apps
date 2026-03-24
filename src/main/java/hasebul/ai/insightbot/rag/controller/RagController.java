@@ -1,9 +1,7 @@
-package hasebul.ai.hitman.controller;
+package hasebul.ai.insightbot.rag.controller;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.model.ChatResponse;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.vectorstore.SearchRequest;

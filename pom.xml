@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>hasebul.ai</groupId>
-	<artifactId>hitman</artifactId>
+	<artifactId>InsightBot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name/>
 	<description/>

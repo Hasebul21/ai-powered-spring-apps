@@ -1,6 +1,5 @@
-package hasebul.ai.hitman.rag;
+package hasebul.ai.insightbot.utilities;
 
-import jakarta.annotation.PostConstruct;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.stereotype.Component;
