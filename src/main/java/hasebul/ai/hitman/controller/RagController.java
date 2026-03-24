@@ -1,6 +1,9 @@
 package hasebul.ai.hitman.controller;
 
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.chat.model.ChatResponse;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.vectorstore.SearchRequest;
@@ -19,13 +22,14 @@ public class RagController {
     private final ChatClient chatClient;
     private final VectorStore vectorStore;
 
+
     public RagController(ChatClient.Builder client, VectorStore vectorStore) {
         this.chatClient = client.build();
         this.vectorStore = vectorStore;
     }
 
     @GetMapping("/chat")
-    public ResponseEntity<String> getChat(@RequestParam("message") String message){
+    public ResponseEntity<ChatResponse> getChat(@RequestParam("message") String message){
         SearchRequest searchRequest = SearchRequest.builder()
                 .query(message)
                 .topK(7)
@@ -48,10 +52,10 @@ public class RagController {
 
                 If not found, say "I don't know".
                 """.formatted(context, message);
-        String ans = chatClient.prompt()
+        ChatResponse ans = chatClient.prompt()
                 .user(prompt)
                 .call()
-                .content();
+                .chatResponse();
         return ResponseEntity.ok(ans);
     }
 }

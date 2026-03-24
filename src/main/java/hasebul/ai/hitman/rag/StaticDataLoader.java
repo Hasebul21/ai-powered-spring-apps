@@ -8,14 +8,15 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class DataLoader {
+public class StaticDataLoader {
+
     private final VectorStore vectorStore;
 
-    public DataLoader(VectorStore vectorStore){
+    public StaticDataLoader(VectorStore vectorStore){
         this.vectorStore = vectorStore;
     }
 
-    @PostConstruct
+    //@PostConstruct
     private void load(){
         List<Document> documents = List.of(
                 new Document("Artificial intelligence is transforming industries through automation, data analysis, and predictive modeling."),
